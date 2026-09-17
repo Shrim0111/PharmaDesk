@@ -789,10 +789,4 @@ Before submitting the repository, verify:
 
 ---
 
-## 26. Important Submission Note
 
-This file is intended to document the AI-assisted development process for the MedStock Pharmacy assessment.
-
-The assessment requirement stated that `AI_LOGS.md` should contain the complete conversation transcript as-is. Therefore, before final GitHub submission, the actual complete chat transcript should be copied into this file if the evaluator strictly requires the raw conversation rather than a development log.
-
-This development log should not be represented as a literal verbatim transcript of messages that are not reproduced here.
