@@ -1,0 +1,1361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MedStock Pharmacy</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/styles.css"
+    >
+</head>
+
+<body>
+
+    <!-- ======================================================
+         Navigation
+         ====================================================== -->
+
+    <header class="navbar">
+        <div class="container nav-content">
+
+            <a
+                href="#home"
+                class="brand"
+            >
+                <span class="brand-icon">✚</span>
+                <span>MedStock</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#inventory">Inventory</a>
+                <a href="#automation">Automation</a>
+            </nav>
+
+            <div class="nav-user">
+                <span id="userEmail"></span>
+
+                <button
+                    id="logoutButton"
+                    class="button button-small button-outline hidden"
+                    type="button"
+                >
+                    Logout
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ==================================================
+             Landing Page
+             ================================================== -->
+
+        <section
+            id="home"
+            class="hero"
+        >
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        Pharmacy Inventory Management
+                    </span>
+
+                    <h1>
+                        Smarter pharmacy stock management
+                    </h1>
+
+                    <p class="hero-text">
+                        MedStock helps neighborhood pharmacies track
+                        medicine batches, prevent expired dispensing,
+                        follow FEFO, monitor expiry dates and automate
+                        reorder notifications.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            onclick="scrollToSection('inventory')"
+                        >
+                            Manage Inventory
+                        </button>
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            onclick="scrollToSection('automation')"
+                        >
+                            View Automation
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card">
+
+                    <div class="hero-card-header">
+                        <span>Today's Pharmacy View</span>
+                        <span class="status-dot"></span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <strong id="heroMedicineCount">—</strong>
+                        <span>Medicines</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <strong id="heroBatchCount">—</strong>
+                        <span>Batches tracked</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <strong id="heroAlertCount">—</strong>
+                        <span>Expiry alerts</span>
+                    </div>
+
+                    <p class="hero-card-note">
+                        Stock is always evaluated using expiry-aware
+                        sellable inventory.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             Key Features
+             ================================================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">
+                        Key Features
+                    </span>
+
+                    <h2>
+                        Everything needed for safer stock control
+                    </h2>
+
+                    <p>
+                        Built around the real workflow of a neighborhood
+                        pharmacy.
+                    </p>
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+                        <div class="feature-icon">📦</div>
+
+                        <h3>Batch Tracking</h3>
+
+                        <p>
+                            Track quantities and expiry dates at the
+                            individual batch level.
+                        </p>
+                    </article>
+
+
+                    <article class="feature-card">
+                        <div class="feature-icon">⏱</div>
+
+                        <h3>FEFO Dispensing</h3>
+
+                        <p>
+                            Dispense the earliest-expiring valid batch
+                            before later-expiring batches.
+                        </p>
+                    </article>
+
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡</div>
+
+                        <h3>Expiry Protection</h3>
+
+                        <p>
+                            Expired batches are excluded from sellable
+                            stock and quarantined by automation.
+                        </p>
+                    </article>
+
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🔔</div>
+
+                        <h3>Smart Alerts</h3>
+
+                        <p>
+                            Identify batches approaching expiry and
+                            generate reorder notifications.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             Target Audience
+             ================================================== -->
+
+        <section class="section section-muted">
+            <div class="container two-column">
+
+                <div>
+                    <span class="eyebrow">
+                        Who is it for?
+                    </span>
+
+                    <h2>
+                        Designed for neighborhood pharmacies
+                    </h2>
+
+                    <p>
+                        MedStock is intended for pharmacy teams that
+                        need a simple way to understand what medicine
+                        is available, which batch should be dispensed
+                        next and which stock needs attention.
+                    </p>
+                </div>
+
+
+                <div class="audience-list">
+
+                    <div class="audience-item">
+                        <span>✓</span>
+                        <div>
+                            <strong>Pharmacists</strong>
+                            <p>
+                                Quickly check sellable stock and expiry
+                                information.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="audience-item">
+                        <span>✓</span>
+                        <div>
+                            <strong>Pharmacy Managers</strong>
+                            <p>
+                                Monitor stock levels and reorder needs.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="audience-item">
+                        <span>✓</span>
+                        <div>
+                            <strong>Inventory Staff</strong>
+                            <p>
+                                Import and maintain medicine batch data.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             Authentication
+             ================================================== -->
+
+        <section
+            id="authSection"
+            class="section"
+        >
+            <div class="container auth-container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">
+                        Get Started
+                    </span>
+
+                    <h2>
+                        Pharmacy account
+                    </h2>
+
+                    <p>
+                        Register a new account or sign in to manage
+                        inventory.
+                    </p>
+                </div>
+
+
+                <div class="auth-grid">
+
+                    <!-- Login -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Login</h3>
+
+                                <p>
+                                    Access your pharmacy inventory.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <form id="loginForm">
+
+                            <div class="form-group">
+                                <label for="loginEmail">
+                                    Email
+                                </label>
+
+                                <input
+                                    id="loginEmail"
+                                    name="username"
+                                    type="email"
+                                    placeholder="pharmacy@example.com"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="loginPassword">
+                                    Password
+                                </label>
+
+                                <input
+                                    id="loginPassword"
+                                    name="password"
+                                    type="password"
+                                    placeholder="Minimum 8 characters"
+                                    required
+                                >
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="button button-primary button-full"
+                            >
+                                Login
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- Register -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Register</h3>
+
+                                <p>
+                                    Create a pharmacy account.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <form id="registerForm">
+
+                            <div class="form-group">
+                                <label for="registerEmail">
+                                    Email
+                                </label>
+
+                                <input
+                                    id="registerEmail"
+                                    type="email"
+                                    placeholder="pharmacy@example.com"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="registerPassword">
+                                    Password
+                                </label>
+
+                                <input
+                                    id="registerPassword"
+                                    type="password"
+                                    placeholder="Minimum 8 characters"
+                                    minlength="8"
+                                    required
+                                >
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="button button-secondary button-full"
+                            >
+                                Create Account
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             Inventory
+             ================================================== -->
+
+        <section
+            id="inventory"
+            class="section section-muted"
+        >
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">
+                        Inventory
+                    </span>
+
+                    <h2>
+                        Medicine inventory
+                    </h2>
+
+                    <p>
+                        Search, sort and inspect sellable pharmacy stock.
+                    </p>
+                </div>
+
+
+                <div
+                    id="inventoryLocked"
+                    class="locked-message"
+                >
+                    <div class="locked-icon">🔒</div>
+
+                    <h3>
+                        Login required
+                    </h3>
+
+                    <p>
+                        Sign in above to access pharmacy inventory.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        onclick="scrollToSection('authSection')"
+                    >
+                        Login
+                    </button>
+                </div>
+
+
+                <div
+                    id="inventoryContent"
+                    class="hidden"
+                >
+
+                    <!-- Inventory controls -->
+
+                    <div class="toolbar">
+
+                        <div class="search-box">
+
+                            <label
+                                for="searchInput"
+                                class="sr-only"
+                            >
+                                Search medicines
+                            </label>
+
+                            <input
+                                id="searchInput"
+                                type="search"
+                                placeholder="Search by medicine name or SKU..."
+                            >
+
+                        </div>
+
+
+                        <div class="toolbar-control">
+
+                            <label for="sortBy">
+                                Sort
+                            </label>
+
+                            <select id="sortBy">
+                                <option value="name">
+                                    Name
+                                </option>
+
+                                <option value="sku">
+                                    SKU
+                                </option>
+
+                                <option value="reorder_threshold">
+                                    Reorder threshold
+                                </option>
+
+                                <option value="id">
+                                    ID
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="toolbar-control">
+
+                            <label for="sortOrder">
+                                Order
+                            </label>
+
+                            <select id="sortOrder">
+                                <option value="asc">
+                                    Ascending
+                                </option>
+
+                                <option value="desc">
+                                    Descending
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            id="refreshMedicinesButton"
+                            type="button"
+                            class="button button-secondary"
+                        >
+                            Refresh
+                        </button>
+
+                    </div>
+
+
+                    <!-- Medicine table -->
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Medicine</th>
+                                    <th>SKU</th>
+                                    <th>Sellable Stock</th>
+                                    <th>Nearest Expiry</th>
+                                    <th>Reorder Threshold</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="medicineTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div
+                        id="emptyInventory"
+                        class="empty-state hidden"
+                    >
+                        <div class="empty-icon">📦</div>
+
+                        <h3>
+                            No medicines found
+                        </h3>
+
+                        <p>
+                            Try another search or add your first medicine.
+                        </p>
+                    </div>
+
+
+                    <!-- Pagination -->
+
+                    <div class="pagination">
+
+                        <button
+                            id="previousPageButton"
+                            type="button"
+                            class="button button-small button-outline"
+                        >
+                            ← Previous
+                        </button>
+
+                        <span id="pageInfo">
+                            Page 1
+                        </span>
+
+                        <button
+                            id="nextPageButton"
+                            type="button"
+                            class="button button-small button-outline"
+                        >
+                            Next →
+                        </button>
+
+                    </div>
+
+
+                    <!-- Add medicine -->
+
+                    <div class="panel inventory-form-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>
+                                    Add medicine
+                                </h3>
+
+                                <p>
+                                    Create a medicine before adding batches.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <form id="medicineForm">
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="medicineName">
+                                        Medicine name
+                                    </label>
+
+                                    <input
+                                        id="medicineName"
+                                        type="text"
+                                        placeholder="Paracetamol"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="medicineSku">
+                                        SKU
+                                    </label>
+
+                                    <input
+                                        id="medicineSku"
+                                        type="text"
+                                        placeholder="PARA-500"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="reorderThreshold">
+                                        Reorder threshold
+                                    </label>
+
+                                    <input
+                                        id="reorderThreshold"
+                                        type="number"
+                                        min="0"
+                                        value="10"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="button button-primary"
+                            >
+                                Add Medicine
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- Add batch -->
+
+                    <div class="panel inventory-form-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>
+                                    Add batch
+                                </h3>
+
+                                <p>
+                                    Add stock to an existing medicine.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <form id="batchForm">
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="batchMedicineId">
+                                        Medicine ID
+                                    </label>
+
+                                    <input
+                                        id="batchMedicineId"
+                                        type="number"
+                                        min="1"
+                                        placeholder="1"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="batchNumber">
+                                        Batch number
+                                    </label>
+
+                                    <input
+                                        id="batchNumber"
+                                        type="text"
+                                        placeholder="PARA001"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="batchQuantity">
+                                        Quantity
+                                    </label>
+
+                                    <input
+                                        id="batchQuantity"
+                                        type="number"
+                                        min="1"
+                                        placeholder="100"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="batchExpiry">
+                                        Expiry date
+                                    </label>
+
+                                    <input
+                                        id="batchExpiry"
+                                        type="date"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="button button-primary"
+                            >
+                                Add Batch
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- Dispensing -->
+
+                    <div class="panel inventory-form-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>
+                                    Dispense medicine
+                                </h3>
+
+                                <p>
+                                    FEFO automatically selects the earliest
+                                    valid expiry batch.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <form id="dispenseForm">
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="dispenseMedicineId">
+                                        Medicine ID
+                                    </label>
+
+                                    <input
+                                        id="dispenseMedicineId"
+                                        type="number"
+                                        min="1"
+                                        placeholder="1"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="dispenseQuantity">
+                                        Quantity
+                                    </label>
+
+                                    <input
+                                        id="dispenseQuantity"
+                                        type="number"
+                                        min="1"
+                                        placeholder="5"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="button button-primary"
+                            >
+                                Dispense
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             Automation
+             ================================================== -->
+
+        <section
+            id="automation"
+            class="section"
+        >
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">
+                        Automation
+                    </span>
+
+                    <h2>
+                        Daily pharmacy intelligence
+                    </h2>
+
+                    <p>
+                        Run the daily clock to process expiry and
+                        reorder workflows.
+                    </p>
+                </div>
+
+
+                <div
+                    id="automationLocked"
+                    class="locked-message"
+                >
+                    <div class="locked-icon">🔒</div>
+
+                    <h3>
+                        Login required
+                    </h3>
+
+                    <p>
+                        Sign in to run automation and view notifications.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="automationContent"
+                    class="hidden"
+                >
+
+                    <div class="automation-grid">
+
+                        <!-- Clock -->
+
+                        <div class="panel">
+
+                            <div class="panel-icon">
+                                ⏰
+                            </div>
+
+                            <h3>
+                                Run Daily Clock
+                            </h3>
+
+                            <p>
+                                Quarantines expired batches, creates
+                                seven-day expiry alerts and generates
+                                reorder notifications.
+                            </p>
+
+                            <button
+                                id="clockButton"
+                                type="button"
+                                class="button button-primary"
+                            >
+                                Run Clock
+                            </button>
+
+                            <div
+                                id="clockResult"
+                                class="result-box hidden"
+                            ></div>
+
+                        </div>
+
+
+                        <!-- Alerts -->
+
+                        <div class="panel">
+
+                            <div class="panel-icon">
+                                ⚠️
+                            </div>
+
+                            <h3>
+                                Expiry Alerts
+                            </h3>
+
+                            <p>
+                                Batches approaching expiry appear here.
+                            </p>
+
+                            <button
+                                id="refreshAlertsButton"
+                                type="button"
+                                class="button button-secondary"
+                            >
+                                Refresh Alerts
+                            </button>
+
+                            <div
+                                id="alertsList"
+                                class="alerts-list"
+                            >
+                                <p class="muted">
+                                    No alerts loaded.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Outbox -->
+
+                        <div class="panel">
+
+                            <div class="panel-icon">
+                                📬
+                            </div>
+
+                            <h3>
+                                Notification Outbox
+                            </h3>
+
+                            <p>
+                                Reorder events waiting for the Notification
+                                Service.
+                            </p>
+
+                            <button
+                                id="refreshOutboxButton"
+                                type="button"
+                                class="button button-secondary"
+                            >
+                                Refresh Outbox
+                            </button>
+
+                            <div
+                                id="outboxList"
+                                class="outbox-list"
+                            >
+                                <p class="muted">
+                                    No messages loaded.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CSV import -->
+
+                    <div class="panel import-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>
+                                    Import messy batch data
+                                </h3>
+
+                                <p>
+                                    Upload a CSV containing SKU, batch,
+                                    quantity and expiry information.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="import-info">
+
+                            <div>
+                                <strong>
+                                    Supported quantities
+                                </strong>
+
+                                <span>
+                                    10, "10", "10 units"
+                                </span>
+                            </div>
+
+
+                            <div>
+                                <strong>
+                                    Supported dates
+                                </strong>
+
+                                <span>
+                                    YYYY-MM-DD and DD/MM/YYYY
+                                </span>
+                            </div>
+
+
+                            <div>
+                                <strong>
+                                    Duplicate handling
+                                </strong>
+
+                                <span>
+                                    Duplicate batches are counted separately
+                                    as deduped.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <form id="importForm">
+
+                            <div class="import-controls">
+
+                                <input
+                                    id="importFile"
+                                    type="file"
+                                    accept=".csv,text/csv"
+                                    required
+                                >
+
+                                <button
+                                    type="submit"
+                                    class="button button-primary"
+                                >
+                                    Import CSV
+                                </button>
+
+                            </div>
+
+                        </form>
+
+
+                        <div
+                            id="importResult"
+                            class="result-box hidden"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             How It Helps
+             ================================================== -->
+
+        <section class="section section-muted">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">
+                        How MedStock Helps
+                    </span>
+
+                    <h2>
+                        From inventory data to actionable decisions
+                    </h2>
+                </div>
+
+
+                <div class="workflow">
+
+                    <div class="workflow-step">
+                        <span class="workflow-number">1</span>
+
+                        <h3>
+                            Track
+                        </h3>
+
+                        <p>
+                            Store medicine and batch-level inventory
+                            information.
+                        </p>
+                    </div>
+
+
+                    <div class="workflow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="workflow-step">
+                        <span class="workflow-number">2</span>
+
+                        <h3>
+                            Protect
+                        </h3>
+
+                        <p>
+                            Exclude expired batches from sellable stock
+                            and use FEFO for dispensing.
+                        </p>
+                    </div>
+
+
+                    <div class="workflow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="workflow-step">
+                        <span class="workflow-number">3</span>
+
+                        <h3>
+                            Automate
+                        </h3>
+
+                        <p>
+                            Detect expiry and low-stock conditions through
+                            the daily clock.
+                        </p>
+                    </div>
+
+
+                    <div class="workflow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="workflow-step">
+                        <span class="workflow-number">4</span>
+
+                        <h3>
+                            Act
+                        </h3>
+
+                        <p>
+                            Generate alerts and reorder notifications
+                            through the outbox.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             Next Features
+             ================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">
+                        What's Next?
+                    </span>
+
+                    <h2>
+                        Three future improvements
+                    </h2>
+
+                    <p>
+                        Potential extensions for a production version.
+                    </p>
+                </div>
+
+
+                <div class="future-grid">
+
+                    <article class="future-card">
+
+                        <span class="future-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Real Notification Service
+                        </h3>
+
+                        <p>
+                            Connect the outbox to email, SMS or another
+                            notification provider.
+                        </p>
+
+                    </article>
+
+
+                    <article class="future-card">
+
+                        <span class="future-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Barcode Scanning
+                        </h3>
+
+                        <p>
+                            Scan medicine and batch barcodes to speed up
+                            receiving and dispensing.
+                        </p>
+
+                    </article>
+
+
+                    <article class="future-card">
+
+                        <span class="future-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Analytics Dashboard
+                        </h3>
+
+                        <p>
+                            Add historical sales, expiry-loss and
+                            replenishment analytics.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ======================================================
+         Toast notifications
+         ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast hidden"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- ======================================================
+         JavaScript
+         ====================================================== -->
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
+

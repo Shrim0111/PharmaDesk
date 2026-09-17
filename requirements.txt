@@ -1,0 +1,25 @@
+# =========================
+# MedStock Pharmacy
+# Python dependencies
+# =========================
+
+# Web framework
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+
+# Database
+sqlalchemy==2.0.43
+
+# Data validation / schemas
+pydantic==2.11.7
+
+# Authentication
+PyJWT==2.10.1
+pwdlib[argon2]==0.2.1
+
+# Form and file upload support
+python-multipart==0.0.20
+
+# HTTP / testing
+httpx==0.28.1
+pytest==8.4.1
